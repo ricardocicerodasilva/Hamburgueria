@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Array carros </title>
+</head>
+
+<body leftmargin="80" topmargin="80">
+    <h1>Trabalhando com Array Lanches </h1>
+    <p></p>
+
+    <p> Hamburguer: <span id="hamb"></span>
+    <p> Acompanhamento:<span id="acomp"></span></p>
+    <p> Bebida: <span id="beb"></span></p>
+    <p> Preço total: <span id="precohamb"></span></p>
+
+    <script>
+
+        let hamburg = Number(prompt("Escolha entre: 1 = X1 ; 2 = X2 ; 3 = X3 ; 4 = X4"));
+        let Acomp = Number(prompt("Escolha entre: 1 = Nugget ou  2 = batatinha"));
+        let bebi = Number(prompt("Escolha entre: 1 = Coca-cola ; 2 = Fanta ; 3 = Água"));
+
+        const hamburguer = ["1", "2", "3", "4"];
+        const acompanhamento = ["1", "2"];
+        const bebida = ["1", "2", "3"];
+
+        const precohabug = [1.36, 2.31, 2.81, 3.21]
+        const precoacomp = [3.69, 1.58]
+        const precobebi = [1.48, 2.58, 0.98]
+
+
+        switch (true) {
+            case hamburg == 1:
+                hamburg = precohabug[0];
+                break;
+            case hamburg == 2:
+                hamburg = precohabug[1];
+                break;
+            case hamburg == 3:
+                hamburg = precohabug[2];
+                break;
+            case hamburg == 4:
+                hamburg = precohabug[3];
+                break;
+            default:
+                break;
+        }
+        switch (true){
+            case Acomp == 1:
+                Acomp = precoacomp[0];
+                break;
+            case Acomp == 2:
+                Acomp = precoacomp[1];
+                break;
+        }
+        switch(true){
+            case bebi == 1:
+                bebi = precobebi[0];
+                break;
+            case bebi == 2:
+                bebi = precobebi[1];
+                break;
+            case bebi == 3:
+                bebi = precobebi[2];
+                break;
+        }
+
+        let resultado = hamburg + Acomp + bebi;
+
+
+        document.getElementById("precohamb").innerHTML = resultado.toFixed(2);
+        document.getElementById("beb").innerHTML = bebi;
+        document.getElementById("acomp").innerHTML = Acomp;
+        document.getElementById("hamb").innerHTML = hamburg;
+
+
+    </script>
+
+</body>
+
+</html>
